@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_payment**](PaymentInitiationUKOnlyApi.md#create_payment) | **Post** /payment_initiation/payment/create | Create Payment
-[**create_payment_recipient**](PaymentInitiationUKOnlyApi.md#create_payment_recipient) | **Post** /payment_initiation/recipient/create | Create Payment Recipient
-[**create_payment_token**](PaymentInitiationUKOnlyApi.md#create_payment_token) | **Post** /payment_initiation/payment/token/create | Create Payment Token
-[**get_payment**](PaymentInitiationUKOnlyApi.md#get_payment) | **Post** /payment_initiation/payment/get | Get Payment
-[**get_payment_recipient**](PaymentInitiationUKOnlyApi.md#get_payment_recipient) | **Post** /payment_initiation/recipient/get | Get Payment Recipient
-[**list_payment_recipients**](PaymentInitiationUKOnlyApi.md#list_payment_recipients) | **Post** /payment_initiation/recipient/list | List Payment Recipients
-[**list_payments**](PaymentInitiationUKOnlyApi.md#list_payments) | **Post** /payment_initiation/payment/list | List Payments
+[**create_payment**](PaymentInitiationUKOnlyApi.md#create_payment) | **post** /payment_initiation/payment/create | Create Payment
+[**create_payment_recipient**](PaymentInitiationUKOnlyApi.md#create_payment_recipient) | **post** /payment_initiation/recipient/create | Create Payment Recipient
+[**create_payment_token**](PaymentInitiationUKOnlyApi.md#create_payment_token) | **post** /payment_initiation/payment/token/create | Create Payment Token
+[**get_payment**](PaymentInitiationUKOnlyApi.md#get_payment) | **post** /payment_initiation/payment/get | Get Payment
+[**get_payment_recipient**](PaymentInitiationUKOnlyApi.md#get_payment_recipient) | **post** /payment_initiation/recipient/get | Get Payment Recipient
+[**list_payment_recipients**](PaymentInitiationUKOnlyApi.md#list_payment_recipients) | **post** /payment_initiation/recipient/list | List Payment Recipients
+[**list_payments**](PaymentInitiationUKOnlyApi.md#list_payments) | **post** /payment_initiation/payment/list | List Payments
 
 
 

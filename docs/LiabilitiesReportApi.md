@@ -4,9 +4,9 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_liabilities_report**](LiabilitiesReportApi.md#create_liabilities_report) | **Post** /liabilities_report/create | Create Liabilities Report
-[**remove_liabilities_report**](LiabilitiesReportApi.md#remove_liabilities_report) | **Post** /liabilities_report/remove | Remove Liabilities Report
-[**retrieve_liabilities_report**](LiabilitiesReportApi.md#retrieve_liabilities_report) | **Post** /liabilities_report/get | Retrieve Liabilities Report
+[**create_liabilities_report**](LiabilitiesReportApi.md#create_liabilities_report) | **post** /liabilities_report/create | Create Liabilities Report
+[**remove_liabilities_report**](LiabilitiesReportApi.md#remove_liabilities_report) | **post** /liabilities_report/remove | Remove Liabilities Report
+[**retrieve_liabilities_report**](LiabilitiesReportApi.md#retrieve_liabilities_report) | **post** /liabilities_report/get | Retrieve Liabilities Report
 
 
 

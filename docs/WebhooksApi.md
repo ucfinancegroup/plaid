@@ -4,8 +4,8 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fire_webhook_sandbox_only**](WebhooksApi.md#fire_webhook_sandbox_only) | **Post** /sandbox/item/fire_webhook | Fire Webhook [Sandbox Only]
-[**get_webhook_verification_key**](WebhooksApi.md#get_webhook_verification_key) | **Post** /webhook_verification_key/get | Get Webhook Verification Key
+[**fire_webhook_sandbox_only**](WebhooksApi.md#fire_webhook_sandbox_only) | **post** /sandbox/item/fire_webhook | Fire Webhook [Sandbox Only]
+[**get_webhook_verification_key**](WebhooksApi.md#get_webhook_verification_key) | **post** /webhook_verification_key/get | Get Webhook Verification Key
 
 
 

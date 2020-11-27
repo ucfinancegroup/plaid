@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_balance**](BalanceApi.md#retrieve_balance) | **Post** /accounts/balance/get | Retrieve Balance
+[**retrieve_balance**](BalanceApi.md#retrieve_balance) | **post** /accounts/balance/get | Retrieve Balance
 
 
 

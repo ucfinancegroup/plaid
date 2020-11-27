@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_asset_report**](AssetsApi.md#create_asset_report) | **Post** /asset_report/create | Create Asset Report
-[**create_audit_copy**](AssetsApi.md#create_audit_copy) | **Post** /asset_report/audit_copy/create | Create Audit Copy
-[**refresh_asset_report**](AssetsApi.md#refresh_asset_report) | **Post** /asset_report/refresh | Refresh Asset Report
-[**remove_asset_report**](AssetsApi.md#remove_asset_report) | **Post** /asset_report/remove | Remove Asset Report
-[**remove_audit_copy**](AssetsApi.md#remove_audit_copy) | **Post** /asset_report/audit_copy/remove | Remove Audit Copy
-[**retrievean_asset_report_json**](AssetsApi.md#retrievean_asset_report_json) | **Post** /asset_report/get | Retrieve an Asset Report (JSON)
-[**retrievean_asset_report_pdf**](AssetsApi.md#retrievean_asset_report_pdf) | **Post** /asset_report/pdf/get | Retrieve an Asset Report (PDF)
+[**create_asset_report**](AssetsApi.md#create_asset_report) | **post** /asset_report/create | Create Asset Report
+[**create_audit_copy**](AssetsApi.md#create_audit_copy) | **post** /asset_report/audit_copy/create | Create Audit Copy
+[**refresh_asset_report**](AssetsApi.md#refresh_asset_report) | **post** /asset_report/refresh | Refresh Asset Report
+[**remove_asset_report**](AssetsApi.md#remove_asset_report) | **post** /asset_report/remove | Remove Asset Report
+[**remove_audit_copy**](AssetsApi.md#remove_audit_copy) | **post** /asset_report/audit_copy/remove | Remove Audit Copy
+[**retrievean_asset_report_json**](AssetsApi.md#retrievean_asset_report_json) | **post** /asset_report/get | Retrieve an Asset Report (JSON)
+[**retrievean_asset_report_pdf**](AssetsApi.md#retrievean_asset_report_pdf) | **post** /asset_report/pdf/get | Retrieve an Asset Report (PDF)
 
 
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_income**](IncomeApi.md#retrieve_income) | **Post** /income/get | Retrieve Income
+[**retrieve_income**](IncomeApi.md#retrieve_income) | **post** /income/get | Retrieve Income
 
 
 

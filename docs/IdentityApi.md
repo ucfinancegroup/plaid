@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_identity**](IdentityApi.md#retrieve_identity) | **Post** /identity/get | Retrieve Identity
+[**retrieve_identity**](IdentityApi.md#retrieve_identity) | **post** /identity/get | Retrieve Identity
 
 
 

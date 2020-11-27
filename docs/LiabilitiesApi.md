@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_liabilities**](LiabilitiesApi.md#retrieve_liabilities) | **Post** /liabilities/get | Retrieve Liabilities
+[**retrieve_liabilities**](LiabilitiesApi.md#retrieve_liabilities) | **post** /liabilities/get | Retrieve Liabilities
 
 
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_categories**](CategoriesApi.md#retrieve_categories) | **Post** /categories/get | Retrieve Categories
+[**retrieve_categories**](CategoriesApi.md#retrieve_categories) | **post** /categories/get | Retrieve Categories
 
 
 

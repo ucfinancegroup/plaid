@@ -4,14 +4,14 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**automated_deposit_webhook**](ItemManagementApi.md#automated_deposit_webhook) | **Post** /sandbox/item/set_verification_status | Automated Deposit Webhook
-[**create_public_tokenfor_update**](ItemManagementApi.md#create_public_tokenfor_update) | **Post** /item/public_token/create | Create Public Token for Update
-[**remove_item**](ItemManagementApi.md#remove_item) | **Post** /item/remove | Remove Item
-[**retrieve_an_items_accounts**](ItemManagementApi.md#retrieve_an_items_accounts) | **Post** /accounts/get | Retrieve an Item's Accounts
-[**retrieve_item**](ItemManagementApi.md#retrieve_item) | **Post** /item/get | Retrieve Item
-[**rotate_access_token**](ItemManagementApi.md#rotate_access_token) | **Post** /item/access_token/invalidate | Rotate Access Token
-[**simulate_itemloginrequired_sandbox_only**](ItemManagementApi.md#simulate_itemloginrequired_sandbox_only) | **Post** /sandbox/item/reset_login | Simulate ITEM_LOGIN_REQUIRED [Sandbox Only]
-[**update_an_items_webhook**](ItemManagementApi.md#update_an_items_webhook) | **Post** /item/webhook/update | Update an Item's Webhook
+[**automated_deposit_webhook**](ItemManagementApi.md#automated_deposit_webhook) | **post** /sandbox/item/set_verification_status | Automated Deposit Webhook
+[**create_public_tokenfor_update**](ItemManagementApi.md#create_public_tokenfor_update) | **post** /item/public_token/create | Create Public Token for Update
+[**remove_item**](ItemManagementApi.md#remove_item) | **post** /item/remove | Remove Item
+[**retrieve_an_items_accounts**](ItemManagementApi.md#retrieve_an_items_accounts) | **post** /accounts/get | Retrieve an Item's Accounts
+[**retrieve_item**](ItemManagementApi.md#retrieve_item) | **post** /item/get | Retrieve Item
+[**rotate_access_token**](ItemManagementApi.md#rotate_access_token) | **post** /item/access_token/invalidate | Rotate Access Token
+[**simulate_itemloginrequired_sandbox_only**](ItemManagementApi.md#simulate_itemloginrequired_sandbox_only) | **post** /sandbox/item/reset_login | Simulate ITEM_LOGIN_REQUIRED [Sandbox Only]
+[**update_an_items_webhook**](ItemManagementApi.md#update_an_items_webhook) | **post** /item/webhook/update | Update an Item's Webhook
 
 
 

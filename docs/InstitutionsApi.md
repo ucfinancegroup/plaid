@@ -4,9 +4,9 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_insitution_list**](InstitutionsApi.md#retrieve_insitution_list) | **Post** /institutions/get | Retrieve Insitution List
-[**search_institutionby_id**](InstitutionsApi.md#search_institutionby_id) | **Post** /institutions/get_by_id | Search Institution by ID
-[**search_institutionby_name**](InstitutionsApi.md#search_institutionby_name) | **Post** /institutions/search | Search Institution by Name
+[**retrieve_insitution_list**](InstitutionsApi.md#retrieve_insitution_list) | **post** /institutions/get | Retrieve Insitution List
+[**search_institutionby_id**](InstitutionsApi.md#search_institutionby_id) | **post** /institutions/get_by_id | Search Institution by ID
+[**search_institutionby_name**](InstitutionsApi.md#search_institutionby_name) | **post** /institutions/search | Search Institution by Name
 
 
 

@@ -4,8 +4,8 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_item_sandbox_only**](ItemCreationApi.md#create_item_sandbox_only) | **Post** /sandbox/public_token/create | Create Item [Sandbox Only]
-[**exchange_token**](ItemCreationApi.md#exchange_token) | **Post** /item/public_token/exchange | Exchange Token
+[**create_item_sandbox_only**](ItemCreationApi.md#create_item_sandbox_only) | **post** /sandbox/public_token/create | Create Item [Sandbox Only]
+[**exchange_token**](ItemCreationApi.md#exchange_token) | **post** /item/public_token/exchange | Exchange Token
 
 
 

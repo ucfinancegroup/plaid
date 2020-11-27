@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_link_token**](LinkTokensApi.md#create_link_token) | **Post** /link/token/create | Create Link Token
+[**create_link_token**](LinkTokensApi.md#create_link_token) | **post** /link/token/create | Create Link Token
 
 
 

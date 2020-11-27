@@ -1,88 +1,83 @@
-use hyper;
-use serde;
+use reqwest;
 use serde_json;
+use std::error;
+use std::fmt;
+
+#[derive(Debug, Clone)]
+pub struct ResponseContent<T> {
+    pub status: reqwest::StatusCode,
+    pub content: String,
+    pub entity: Option<T>,
+}
 
 #[derive(Debug)]
 pub enum Error<T> {
-    UriError(hyper::error::UriError),
-    Hyper(hyper::Error),
+    Reqwest(reqwest::Error),
     Serde(serde_json::Error),
-    ApiError(ApiError<T>),
+    Io(std::io::Error),
+    ResponseError(ResponseContent<T>),
 }
 
-#[derive(Debug)]
-pub struct ApiError<T> {
-    pub code: hyper::StatusCode,
-    pub content: Option<T>,
-}
-
-impl<'de, T> From<(hyper::StatusCode, &'de [u8])> for Error<T> 
-    where T: serde::Deserialize<'de> {
-    fn from(e: (hyper::StatusCode, &'de [u8])) -> Self {
-        if e.1.len() == 0 {
-            return Error::ApiError(ApiError{
-                code: e.0,
-                content: None,
-            });
-        }
-        match serde_json::from_slice::<T>(e.1) {
-            Ok(t) => Error::ApiError(ApiError{
-                code: e.0,
-                content: Some(t),
-            }),
-            Err(e) => {
-                Error::from(e)
-            }
-        }
+impl <T> fmt::Display for Error<T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let (module, e) = match self {
+            Error::Reqwest(e) => ("reqwest", e.to_string()),
+            Error::Serde(e) => ("serde", e.to_string()),
+            Error::Io(e) => ("IO", e.to_string()),
+            Error::ResponseError(e) => ("response", format!("status code {}", e.status)),
+        };
+        write!(f, "error in {}: {}", module, e)
     }
 }
 
-impl<T> From<hyper::Error> for Error<T> {
-    fn from(e: hyper::Error) -> Self {
-        return Error::Hyper(e)
+impl <T: fmt::Debug> error::Error for Error<T> {
+    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
+        Some(match self {
+            Error::Reqwest(e) => e,
+            Error::Serde(e) => e,
+            Error::Io(e) => e,
+            Error::ResponseError(_) => return None,
+        })
     }
 }
 
-impl<T> From<serde_json::Error> for Error<T> {
+impl <T> From<reqwest::Error> for Error<T> {
+    fn from(e: reqwest::Error) -> Self {
+        Error::Reqwest(e)
+    }
+}
+
+impl <T> From<serde_json::Error> for Error<T> {
     fn from(e: serde_json::Error) -> Self {
-        return Error::Serde(e)
+        Error::Serde(e)
     }
 }
 
-mod request;
+impl <T> From<std::io::Error> for Error<T> {
+    fn from(e: std::io::Error) -> Self {
+        Error::Io(e)
+    }
+}
 
-mod assets_api;
-pub use self::assets_api::{ AssetsApi, AssetsApiClient };
-mod auth_api;
-pub use self::auth_api::{ AuthApi, AuthApiClient };
-mod balance_api;
-pub use self::balance_api::{ BalanceApi, BalanceApiClient };
-mod categories_api;
-pub use self::categories_api::{ CategoriesApi, CategoriesApiClient };
-mod identity_api;
-pub use self::identity_api::{ IdentityApi, IdentityApiClient };
-mod income_api;
-pub use self::income_api::{ IncomeApi, IncomeApiClient };
-mod institutions_api;
-pub use self::institutions_api::{ InstitutionsApi, InstitutionsApiClient };
-mod investments_api;
-pub use self::investments_api::{ InvestmentsApi, InvestmentsApiClient };
-mod item_creation_api;
-pub use self::item_creation_api::{ ItemCreationApi, ItemCreationApiClient };
-mod item_management_api;
-pub use self::item_management_api::{ ItemManagementApi, ItemManagementApiClient };
-mod liabilities_api;
-pub use self::liabilities_api::{ LiabilitiesApi, LiabilitiesApiClient };
-mod liabilities_report_api;
-pub use self::liabilities_report_api::{ LiabilitiesReportApi, LiabilitiesReportApiClient };
-mod link_tokens_api;
-pub use self::link_tokens_api::{ LinkTokensApi, LinkTokensApiClient };
-mod payment_initiation_uk_only_api;
-pub use self::payment_initiation_uk_only_api::{ PaymentInitiationUKOnlyApi, PaymentInitiationUKOnlyApiClient };
-mod transactions_api;
-pub use self::transactions_api::{ TransactionsApi, TransactionsApiClient };
-mod webhooks_api;
-pub use self::webhooks_api::{ WebhooksApi, WebhooksApiClient };
+pub fn urlencode<T: AsRef<str>>(s: T) -> String {
+    ::url::form_urlencoded::byte_serialize(s.as_ref().as_bytes()).collect()
+}
+
+pub mod assets_api;
+pub mod auth_api;
+pub mod balance_api;
+pub mod categories_api;
+pub mod identity_api;
+pub mod income_api;
+pub mod institutions_api;
+pub mod investments_api;
+pub mod item_creation_api;
+pub mod item_management_api;
+pub mod liabilities_api;
+pub mod liabilities_report_api;
+pub mod link_tokens_api;
+pub mod payment_initiation_uk_only_api;
+pub mod transactions_api;
+pub mod webhooks_api;
 
 pub mod configuration;
-pub mod client;

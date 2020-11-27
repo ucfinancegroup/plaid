@@ -4,8 +4,8 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_investments_holdings**](InvestmentsApi.md#retrieve_investments_holdings) | **Post** /investments/holdings/get | Retrieve Investments Holdings
-[**retrieve_investments_transactions**](InvestmentsApi.md#retrieve_investments_transactions) | **Post** /investments/transactions/get | Retrieve Investments Transactions
+[**retrieve_investments_holdings**](InvestmentsApi.md#retrieve_investments_holdings) | **post** /investments/holdings/get | Retrieve Investments Holdings
+[**retrieve_investments_transactions**](InvestmentsApi.md#retrieve_investments_transactions) | **post** /investments/transactions/get | Retrieve Investments Transactions
 
 
 

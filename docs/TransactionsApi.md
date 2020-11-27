@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.plaid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieve_transactions**](TransactionsApi.md#retrieve_transactions) | **Post** /transactions/get | Retrieve Transactions
+[**retrieve_transactions**](TransactionsApi.md#retrieve_transactions) | **post** /transactions/get | Retrieve Transactions
 
 
 
