@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## create_liabilities_report
 
-> crate::models::CreateLiabilitiesReportExample create_liabilities_report(create_liabilities_report_request)
+> crate::models::CreateLiabilitiesReportResponse create_liabilities_report(create_liabilities_report_request)
 Create Liabilities Report
 
 With your desired `access_tokens` in hand, all you need to do to create a Liabilities Report is to call the `/liabilities_report/create` endpoint.  When creating a Liabilities Report, the only required fields are your `client_id`, `secret`, an `array of access_tokens` (one for each Item to be included in the Report), and the number of `days_requested` which determines the duration of transaction history to be included.
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::CreateLiabilitiesReportExample**](CreateLiabilitiesReportExample.md)
+[**crate::models::CreateLiabilitiesReportResponse**](CreateLiabilitiesReportResponse.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ No authorization required
 
 ## remove_liabilities_report
 
-> crate::models::RemoveLiabilitiesReportExample remove_liabilities_report(remove_liabilities_report_request)
+> crate::models::RemoveLiabilitiesReportResponse remove_liabilities_report(remove_liabilities_report_request)
 Remove Liabilities Report
 
 The `/liabilities_report/remove` endpoint allows you to remove a Liabilities Report. Removing a Liabilities Report invalidates its `liabilities_report_token`, meaning you will no longer be able to use it to access report data. Removing a Liabilities Report does not affect the underlying Items.
@@ -56,7 +56,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RemoveLiabilitiesReportExample**](RemoveLiabilitiesReportExample.md)
+[**crate::models::RemoveLiabilitiesReportResponse**](RemoveLiabilitiesReportResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ No authorization required
 
 ## retrieve_liabilities_report
 
-> crate::models::RetrieveLiabilitiesReportExample retrieve_liabilities_report(retrieve_liabilities_report_request)
+> crate::models::RetrieveLiabilitiesReportResponse retrieve_liabilities_report(retrieve_liabilities_report_request)
 Retrieve Liabilities Report
 
 You can retrieve your Liabilities Report in JSON by calling `/liabilities_report/get`.  <br /> Just like retrieving `transaction` data, you need to wait several seconds to retrieve a liabilities report after you create one.
@@ -86,7 +86,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveLiabilitiesReportExample**](RetrieveLiabilitiesReportExample.md)
+[**crate::models::RetrieveLiabilitiesReportResponse**](RetrieveLiabilitiesReportResponse.md)
 
 ### Authorization
 

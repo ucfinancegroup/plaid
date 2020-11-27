@@ -24,7 +24,7 @@ pub enum RetrieveIdentityError {
 
 
 /// The `/identity/get` endpoint allows you to retrieve various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
-pub async fn retrieve_identity(configuration: &configuration::Configuration, retrieve_identity_request: crate::models::RetrieveIdentityRequest) -> Result<crate::models::RetrieveIdentityExample, Error<RetrieveIdentityError>> {
+pub async fn retrieve_identity(configuration: &configuration::Configuration, retrieve_identity_request: crate::models::RetrieveIdentityRequest) -> Result<crate::models::RetrieveIdentityResponse, Error<RetrieveIdentityError>> {
 
     let local_var_client = &configuration.client;
 

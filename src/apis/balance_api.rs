@@ -24,7 +24,7 @@ pub enum RetrieveBalanceError {
 
 
 /// The `/accounts/balance/get` endpoint returns the real-time balance for each of an `Item`’s accounts. It can be used for existing `Item`s that were added via any of Plaid’s other products.
-pub async fn retrieve_balance(configuration: &configuration::Configuration, retrieve_balance_request: crate::models::RetrieveBalanceRequest) -> Result<crate::models::RetrieveBalanceExample, Error<RetrieveBalanceError>> {
+pub async fn retrieve_balance(configuration: &configuration::Configuration, retrieve_balance_request: crate::models::RetrieveBalanceRequest) -> Result<crate::models::RetrieveBalanceResponse, Error<RetrieveBalanceError>> {
 
     let local_var_client = &configuration.client;
 

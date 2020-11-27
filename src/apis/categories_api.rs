@@ -24,7 +24,7 @@ pub enum RetrieveCategoriesError {
 
 
 /// This endpoint allows you to get to get detailed information on categories returned by Plaid. This endpoint does not require authentication.
-pub async fn retrieve_categories(configuration: &configuration::Configuration, body: serde_json::Value) -> Result<crate::models::RetrieveCategoriesExample, Error<RetrieveCategoriesError>> {
+pub async fn retrieve_categories(configuration: &configuration::Configuration, body: serde_json::Value) -> Result<crate::models::RetrieveCategoriesResponse, Error<RetrieveCategoriesError>> {
 
     let local_var_client = &configuration.client;
 

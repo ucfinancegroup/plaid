@@ -66,7 +66,7 @@ pub enum ListPaymentsError {
 
 
 /// Create and configure a payment by specifying a `recipient_id`, `reference`, `amount`, and `currency` to create a Plaid payment resource. The Plaid API returns a `payment_id` to identify the created payment.
-pub async fn create_payment(configuration: &configuration::Configuration, create_payment_request: crate::models::CreatePaymentRequest) -> Result<(), Error<CreatePaymentError>> {
+pub async fn create_payment(configuration: &configuration::Configuration, create_payment_request: crate::models::CreatePaymentRequest) -> Result<crate::models::CreatePaymentResponse, Error<CreatePaymentError>> {
 
     let local_var_client = &configuration.client;
 
@@ -85,7 +85,7 @@ pub async fn create_payment(configuration: &configuration::Configuration, create
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<CreatePaymentError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -94,7 +94,7 @@ pub async fn create_payment(configuration: &configuration::Configuration, create
 }
 
 /// In the sandbox environment, you can use the `/payment_initiation/recipient/create` endpoint to generate recipients. Programmatic recipient creation in the development and production environments can be done after approval by our compliance team.  The endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same recipient_id. Recipients are scoped per environment.
-pub async fn create_payment_recipient(configuration: &configuration::Configuration, create_payment_recipient_request: crate::models::CreatePaymentRecipientRequest) -> Result<(), Error<CreatePaymentRecipientError>> {
+pub async fn create_payment_recipient(configuration: &configuration::Configuration, create_payment_recipient_request: crate::models::CreatePaymentRecipientRequest) -> Result<crate::models::CreatePaymentRecipientResponse, Error<CreatePaymentRecipientError>> {
 
     let local_var_client = &configuration.client;
 
@@ -113,7 +113,7 @@ pub async fn create_payment_recipient(configuration: &configuration::Configurati
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<CreatePaymentRecipientError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -150,7 +150,7 @@ pub async fn create_payment_token(configuration: &configuration::Configuration, 
 }
 
 /// The endpoint `payment_initiation/payment/get` takes a `payment_id` and returns all of the payment details for a previously created payment.
-pub async fn get_payment(configuration: &configuration::Configuration, get_payment_request: crate::models::GetPaymentRequest) -> Result<(), Error<GetPaymentError>> {
+pub async fn get_payment(configuration: &configuration::Configuration, get_payment_request: crate::models::GetPaymentRequest) -> Result<crate::models::GetPaymentResponse, Error<GetPaymentError>> {
 
     let local_var_client = &configuration.client;
 
@@ -169,7 +169,7 @@ pub async fn get_payment(configuration: &configuration::Configuration, get_payme
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<GetPaymentError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -178,7 +178,7 @@ pub async fn get_payment(configuration: &configuration::Configuration, get_payme
 }
 
 /// The `/payment_initiation/recipient/get` endpoint allows you to retrieve all of the details for a recipient that you have created.
-pub async fn get_payment_recipient(configuration: &configuration::Configuration, get_payment_recipient_request: crate::models::GetPaymentRecipientRequest) -> Result<(), Error<GetPaymentRecipientError>> {
+pub async fn get_payment_recipient(configuration: &configuration::Configuration, get_payment_recipient_request: crate::models::GetPaymentRecipientRequest) -> Result<crate::models::GetPaymentRecipientResponse, Error<GetPaymentRecipientError>> {
 
     let local_var_client = &configuration.client;
 
@@ -197,7 +197,7 @@ pub async fn get_payment_recipient(configuration: &configuration::Configuration,
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<GetPaymentRecipientError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -206,7 +206,7 @@ pub async fn get_payment_recipient(configuration: &configuration::Configuration,
 }
 
 /// The `/payment_initiation/recipient/list` endpoint allows you to retrieve details for all recipients that you have created.
-pub async fn list_payment_recipients(configuration: &configuration::Configuration, list_payment_recipients_request: crate::models::ListPaymentRecipientsRequest) -> Result<(), Error<ListPaymentRecipientsError>> {
+pub async fn list_payment_recipients(configuration: &configuration::Configuration, list_payment_recipients_request: crate::models::ListPaymentRecipientsRequest) -> Result<crate::models::ListPaymentRecipientsResponse, Error<ListPaymentRecipientsError>> {
 
     let local_var_client = &configuration.client;
 
@@ -225,7 +225,7 @@ pub async fn list_payment_recipients(configuration: &configuration::Configuratio
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<ListPaymentRecipientsError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -234,7 +234,7 @@ pub async fn list_payment_recipients(configuration: &configuration::Configuratio
 }
 
 /// The endpoint `payment_initiation/payment/get` list payment details for all of your previously created payments.  This endpoint accepts `count` and `cursor` as optional parameters in order to support pagination. `count` limits how many payments are returned and can be set between 0 and 200. `cursor` should be a string in RFC 3339 format (i.e. `\"2019-12-06T22:35:49Z\"`). Only payments created before the `cursor` will be returned.
-pub async fn list_payments(configuration: &configuration::Configuration, list_payments_request: crate::models::ListPaymentsRequest) -> Result<(), Error<ListPaymentsError>> {
+pub async fn list_payments(configuration: &configuration::Configuration, list_payments_request: crate::models::ListPaymentsRequest) -> Result<crate::models::ListPaymentsResponse, Error<ListPaymentsError>> {
 
     let local_var_client = &configuration.client;
 
@@ -253,7 +253,7 @@ pub async fn list_payments(configuration: &configuration::Configuration, list_pa
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<ListPaymentsError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };

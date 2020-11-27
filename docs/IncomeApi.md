@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## retrieve_income
 
-> crate::models::RetrieveIncomeExample retrieve_income(retrieve_income_request)
+> crate::models::RetrieveIncomeResponse retrieve_income(retrieve_income_request)
 Retrieve Income
 
 The `/income/get` endpoint allows you to retrieve information pertaining to a `Item`’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job). Details on each of these fields can be found below.   <br /> Just like retrieving `transaction` data, you need to wait several seconds to retrieve `income` data after `Item` creation. A good practice is to retrieve the data when you are notified that it's ready via webhook.
@@ -24,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveIncomeExample**](RetrieveIncomeExample.md)
+[**crate::models::RetrieveIncomeResponse**](RetrieveIncomeResponse.md)
 
 ### Authorization
 

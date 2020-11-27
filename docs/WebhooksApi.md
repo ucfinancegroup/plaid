@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## fire_webhook_sandbox_only
 
-> fire_webhook_sandbox_only(fire_webhook_sandbox_only_request)
+> crate::models::FireWebhookSandboxOnlyResponse fire_webhook_sandbox_only(fire_webhook_sandbox_only_request)
 Fire Webhook [Sandbox Only]
 
 Fire sandbox webhook for item
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::FireWebhookSandboxOnlyResponse**](FireWebhookSandboxOnlyResponse.md)
 
 ### Authorization
 
@@ -34,14 +34,14 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## get_webhook_verification_key
 
-> get_webhook_verification_key(get_webhook_verification_key_request)
+> crate::models::GetWebhookVerificationKeyResponse get_webhook_verification_key(get_webhook_verification_key_request)
 Get Webhook Verification Key
 
 Get Webhook Verification Key
@@ -55,7 +55,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::GetWebhookVerificationKeyResponse**](GetWebhookVerificationKeyResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

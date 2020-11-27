@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## retrieve_investments_holdings
 
-> retrieve_investments_holdings(retrieve_investments_holdings_request)
+> crate::models::RetrieveInvestmentsHoldingsResponse retrieve_investments_holdings(retrieve_investments_holdings_request)
 Retrieve Investments Holdings
 
 ### Parameters
@@ -23,7 +23,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::RetrieveInvestmentsHoldingsResponse**](RetrieveInvestmentsHoldingsResponse.md)
 
 ### Authorization
 
@@ -32,14 +32,14 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## retrieve_investments_transactions
 
-> retrieve_investments_transactions(retrieve_investments_transactions_request)
+> crate::models::RetrieveInvestmentsTransactionsRequest retrieve_investments_transactions(retrieve_investments_transactions_request)
 Retrieve Investments Transactions
 
 ### Parameters
@@ -51,7 +51,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::RetrieveInvestmentsTransactionsRequest**](RetrieveInvestmentsTransactionsRequest.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

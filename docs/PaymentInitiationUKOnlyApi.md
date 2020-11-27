@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## create_payment
 
-> create_payment(create_payment_request)
+> crate::models::CreatePaymentResponse create_payment(create_payment_request)
 Create Payment
 
 Create and configure a payment by specifying a `recipient_id`, `reference`, `amount`, and `currency` to create a Plaid payment resource. The Plaid API returns a `payment_id` to identify the created payment.
@@ -30,7 +30,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::CreatePaymentResponse**](CreatePaymentResponse.md)
 
 ### Authorization
 
@@ -39,14 +39,14 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## create_payment_recipient
 
-> create_payment_recipient(create_payment_recipient_request)
+> crate::models::CreatePaymentRecipientResponse create_payment_recipient(create_payment_recipient_request)
 Create Payment Recipient
 
 In the sandbox environment, you can use the `/payment_initiation/recipient/create` endpoint to generate recipients. Programmatic recipient creation in the development and production environments can be done after approval by our compliance team.  The endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same recipient_id. Recipients are scoped per environment.
@@ -60,7 +60,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::CreatePaymentRecipientResponse**](CreatePaymentRecipientResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -106,7 +106,7 @@ No authorization required
 
 ## get_payment
 
-> get_payment(get_payment_request)
+> crate::models::GetPaymentResponse get_payment(get_payment_request)
 Get Payment
 
 The endpoint `payment_initiation/payment/get` takes a `payment_id` and returns all of the payment details for a previously created payment.
@@ -120,7 +120,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::GetPaymentResponse**](GetPaymentResponse.md)
 
 ### Authorization
 
@@ -129,14 +129,14 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## get_payment_recipient
 
-> get_payment_recipient(get_payment_recipient_request)
+> crate::models::GetPaymentRecipientResponse get_payment_recipient(get_payment_recipient_request)
 Get Payment Recipient
 
 The `/payment_initiation/recipient/get` endpoint allows you to retrieve all of the details for a recipient that you have created.
@@ -150,7 +150,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::GetPaymentRecipientResponse**](GetPaymentRecipientResponse.md)
 
 ### Authorization
 
@@ -159,14 +159,14 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## list_payment_recipients
 
-> list_payment_recipients(list_payment_recipients_request)
+> crate::models::ListPaymentRecipientsResponse list_payment_recipients(list_payment_recipients_request)
 List Payment Recipients
 
 The `/payment_initiation/recipient/list` endpoint allows you to retrieve details for all recipients that you have created.
@@ -180,7 +180,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::ListPaymentRecipientsResponse**](ListPaymentRecipientsResponse.md)
 
 ### Authorization
 
@@ -189,14 +189,14 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## list_payments
 
-> list_payments(list_payments_request)
+> crate::models::ListPaymentsResponse list_payments(list_payments_request)
 List Payments
 
 The endpoint `payment_initiation/payment/get` list payment details for all of your previously created payments.  This endpoint accepts `count` and `cursor` as optional parameters in order to support pagination. `count` limits how many payments are returned and can be set between 0 and 200. `cursor` should be a string in RFC 3339 format (i.e. `\"2019-12-06T22:35:49Z\"`). Only payments created before the `cursor` will be returned.
@@ -210,7 +210,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::ListPaymentsResponse**](ListPaymentsResponse.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

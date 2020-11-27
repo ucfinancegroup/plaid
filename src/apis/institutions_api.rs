@@ -38,7 +38,7 @@ pub enum SearchInstitutionbyNameError {
 
 
 /// To see a full list of supported institutions across all products, use the `/institutions/get` and `/institutions/search` endpoints.   <br /> Use the `count` and `offset` query parameters to retrieve the desired institution data.    <br /> `count`: The total number of Institutions to return, with 0 < count <= 500. <br /> `offset`: The number of Institutions to skip before returning results, with offset >= 0
-pub async fn retrieve_insitution_list(configuration: &configuration::Configuration, retrieve_insitution_list_request: crate::models::RetrieveInsitutionListRequest) -> Result<crate::models::RetrieveInsitutionListExample, Error<RetrieveInsitutionListError>> {
+pub async fn retrieve_insitution_list(configuration: &configuration::Configuration, retrieve_insitution_list_request: crate::models::RetrieveInsitutionListRequest) -> Result<crate::models::RetrieveInsitutionListResponse, Error<RetrieveInsitutionListError>> {
 
     let local_var_client = &configuration.client;
 
@@ -65,7 +65,7 @@ pub async fn retrieve_insitution_list(configuration: &configuration::Configurati
     }
 }
 
-pub async fn search_institutionby_id(configuration: &configuration::Configuration, search_institutionby_id_request: crate::models::SearchInstitutionbyIdRequest) -> Result<crate::models::SearchInstitutionbyIdExample, Error<SearchInstitutionbyIdError>> {
+pub async fn search_institutionby_id(configuration: &configuration::Configuration, search_institutionby_id_request: crate::models::SearchInstitutionbyIdRequest) -> Result<crate::models::SearchInstitutionbyIdResponse, Error<SearchInstitutionbyIdError>> {
 
     let local_var_client = &configuration.client;
 
@@ -93,7 +93,7 @@ pub async fn search_institutionby_id(configuration: &configuration::Configuratio
 }
 
 /// The `/institutions/search` endpoint makes it easy to stay up-to-date with supported institutions and help your users quickly find their institutions.
-pub async fn search_institutionby_name(configuration: &configuration::Configuration, search_institutionby_name_request: crate::models::SearchInstitutionbyNameRequest) -> Result<crate::models::SearchInstitutionbyNameExample, Error<SearchInstitutionbyNameError>> {
+pub async fn search_institutionby_name(configuration: &configuration::Configuration, search_institutionby_name_request: crate::models::SearchInstitutionbyNameRequest) -> Result<crate::models::SearchInstitutionbyNameResponse, Error<SearchInstitutionbyNameError>> {
 
     let local_var_client = &configuration.client;
 

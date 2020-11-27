@@ -23,7 +23,7 @@ pub enum RetrieveLiabilitiesError {
 }
 
 
-pub async fn retrieve_liabilities(configuration: &configuration::Configuration, retrieve_liabilities_request: crate::models::RetrieveLiabilitiesRequest) -> Result<(), Error<RetrieveLiabilitiesError>> {
+pub async fn retrieve_liabilities(configuration: &configuration::Configuration, retrieve_liabilities_request: crate::models::RetrieveLiabilitiesRequest) -> Result<crate::models::RetrieveLiabilitiesResponse, Error<RetrieveLiabilitiesError>> {
 
     let local_var_client = &configuration.client;
 
@@ -42,7 +42,7 @@ pub async fn retrieve_liabilities(configuration: &configuration::Configuration, 
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<RetrieveLiabilitiesError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };

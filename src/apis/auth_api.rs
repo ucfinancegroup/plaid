@@ -24,7 +24,7 @@ pub enum RetrieveAuthError {
 
 
 /// The `/auth/get` endpoint allows you to retrieve the bank account and routing numbers associated with an Item’s checking and savings accounts, along with high-level account data and balances.
-pub async fn retrieve_auth(configuration: &configuration::Configuration, retrieve_auth_request: crate::models::RetrieveAuthRequest) -> Result<crate::models::RetrieveAuthEftExample, Error<RetrieveAuthError>> {
+pub async fn retrieve_auth(configuration: &configuration::Configuration, retrieve_auth_request: crate::models::RetrieveAuthRequest) -> Result<crate::models::RetrieveAuthEftResponse, Error<RetrieveAuthError>> {
 
     let local_var_client = &configuration.client;
 

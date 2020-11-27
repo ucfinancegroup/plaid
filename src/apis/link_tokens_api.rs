@@ -24,7 +24,7 @@ pub enum CreateLinkTokenError {
 
 
 /// Creates a link token with options. The link token can then be used to initialize Plaid Link.
-pub async fn create_link_token(configuration: &configuration::Configuration, create_link_token_request: crate::models::CreateLinkTokenRequest) -> Result<(), Error<CreateLinkTokenError>> {
+pub async fn create_link_token(configuration: &configuration::Configuration, create_link_token_request: crate::models::CreateLinkTokenRequest) -> Result<crate::models::CreateLinkTokenResponse, Error<CreateLinkTokenError>> {
 
     let local_var_client = &configuration.client;
 
@@ -43,7 +43,7 @@ pub async fn create_link_token(configuration: &configuration::Configuration, cre
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<CreateLinkTokenError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };

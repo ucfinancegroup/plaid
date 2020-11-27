@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## retrieve_balance
 
-> crate::models::RetrieveBalanceExample retrieve_balance(retrieve_balance_request)
+> crate::models::RetrieveBalanceResponse retrieve_balance(retrieve_balance_request)
 Retrieve Balance
 
 The `/accounts/balance/get` endpoint returns the real-time balance for each of an `Item`’s accounts. It can be used for existing `Item`s that were added via any of Plaid’s other products.
@@ -24,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveBalanceExample**](RetrieveBalanceExample.md)
+[**crate::models::RetrieveBalanceResponse**](RetrieveBalanceResponse.md)
 
 ### Authorization
 

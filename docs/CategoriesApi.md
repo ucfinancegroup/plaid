@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## retrieve_categories
 
-> crate::models::RetrieveCategoriesExample retrieve_categories(body)
+> crate::models::RetrieveCategoriesResponse retrieve_categories(body)
 Retrieve Categories
 
 This endpoint allows you to get to get detailed information on categories returned by Plaid. This endpoint does not require authentication.
@@ -24,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveCategoriesExample**](RetrieveCategoriesExample.md)
+[**crate::models::RetrieveCategoriesResponse**](RetrieveCategoriesResponse.md)
 
 ### Authorization
 

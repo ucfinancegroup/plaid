@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## retrieve_insitution_list
 
-> crate::models::RetrieveInsitutionListExample retrieve_insitution_list(retrieve_insitution_list_request)
+> crate::models::RetrieveInsitutionListResponse retrieve_insitution_list(retrieve_insitution_list_request)
 Retrieve Insitution List
 
 To see a full list of supported institutions across all products, use the `/institutions/get` and `/institutions/search` endpoints.   <br /> Use the `count` and `offset` query parameters to retrieve the desired institution data.    <br /> `count`: The total number of Institutions to return, with 0 < count <= 500. <br /> `offset`: The number of Institutions to skip before returning results, with offset >= 0
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveInsitutionListExample**](RetrieveInsitutionListExample.md)
+[**crate::models::RetrieveInsitutionListResponse**](RetrieveInsitutionListResponse.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ No authorization required
 
 ## search_institutionby_id
 
-> crate::models::SearchInstitutionbyIdExample search_institutionby_id(search_institutionby_id_request)
+> crate::models::SearchInstitutionbyIdResponse search_institutionby_id(search_institutionby_id_request)
 Search Institution by ID
 
 ### Parameters
@@ -54,7 +54,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchInstitutionbyIdExample**](SearchInstitutionbyIDExample.md)
+[**crate::models::SearchInstitutionbyIdResponse**](SearchInstitutionbyIDResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ No authorization required
 
 ## search_institutionby_name
 
-> crate::models::SearchInstitutionbyNameExample search_institutionby_name(search_institutionby_name_request)
+> crate::models::SearchInstitutionbyNameResponse search_institutionby_name(search_institutionby_name_request)
 Search Institution by Name
 
 The `/institutions/search` endpoint makes it easy to stay up-to-date with supported institutions and help your users quickly find their institutions.
@@ -84,7 +84,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SearchInstitutionbyNameExample**](SearchInstitutionbyNameExample.md)
+[**crate::models::SearchInstitutionbyNameResponse**](SearchInstitutionbyNameResponse.md)
 
 ### Authorization
 

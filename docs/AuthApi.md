@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## retrieve_auth
 
-> crate::models::RetrieveAuthEftExample retrieve_auth(retrieve_auth_request)
+> crate::models::RetrieveAuthEftResponse retrieve_auth(retrieve_auth_request)
 Retrieve Auth
 
 The `/auth/get` endpoint allows you to retrieve the bank account and routing numbers associated with an Item’s checking and savings accounts, along with high-level account data and balances.
@@ -24,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveAuthEftExample**](RetrieveAuthEFTExample.md)
+[**crate::models::RetrieveAuthEftResponse**](RetrieveAuthEFTResponse.md)
 
 ### Authorization
 

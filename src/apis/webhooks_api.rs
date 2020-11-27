@@ -31,7 +31,7 @@ pub enum GetWebhookVerificationKeyError {
 
 
 /// Fire sandbox webhook for item
-pub async fn fire_webhook_sandbox_only(configuration: &configuration::Configuration, fire_webhook_sandbox_only_request: crate::models::FireWebhookSandboxOnlyRequest) -> Result<(), Error<FireWebhookSandboxOnlyError>> {
+pub async fn fire_webhook_sandbox_only(configuration: &configuration::Configuration, fire_webhook_sandbox_only_request: crate::models::FireWebhookSandboxOnlyRequest) -> Result<crate::models::FireWebhookSandboxOnlyResponse, Error<FireWebhookSandboxOnlyError>> {
 
     let local_var_client = &configuration.client;
 
@@ -50,7 +50,7 @@ pub async fn fire_webhook_sandbox_only(configuration: &configuration::Configurat
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<FireWebhookSandboxOnlyError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -59,7 +59,7 @@ pub async fn fire_webhook_sandbox_only(configuration: &configuration::Configurat
 }
 
 /// Get Webhook Verification Key
-pub async fn get_webhook_verification_key(configuration: &configuration::Configuration, get_webhook_verification_key_request: crate::models::GetWebhookVerificationKeyRequest) -> Result<(), Error<GetWebhookVerificationKeyError>> {
+pub async fn get_webhook_verification_key(configuration: &configuration::Configuration, get_webhook_verification_key_request: crate::models::GetWebhookVerificationKeyRequest) -> Result<crate::models::GetWebhookVerificationKeyResponse, Error<GetWebhookVerificationKeyError>> {
 
     let local_var_client = &configuration.client;
 
@@ -78,7 +78,7 @@ pub async fn get_webhook_verification_key(configuration: &configuration::Configu
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<GetWebhookVerificationKeyError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };

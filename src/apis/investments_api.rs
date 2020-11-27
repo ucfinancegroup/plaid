@@ -30,7 +30,7 @@ pub enum RetrieveInvestmentsTransactionsError {
 }
 
 
-pub async fn retrieve_investments_holdings(configuration: &configuration::Configuration, retrieve_investments_holdings_request: crate::models::RetrieveInvestmentsHoldingsRequest) -> Result<(), Error<RetrieveInvestmentsHoldingsError>> {
+pub async fn retrieve_investments_holdings(configuration: &configuration::Configuration, retrieve_investments_holdings_request: crate::models::RetrieveInvestmentsHoldingsRequest) -> Result<crate::models::RetrieveInvestmentsHoldingsResponse, Error<RetrieveInvestmentsHoldingsError>> {
 
     let local_var_client = &configuration.client;
 
@@ -49,7 +49,7 @@ pub async fn retrieve_investments_holdings(configuration: &configuration::Config
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<RetrieveInvestmentsHoldingsError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -57,7 +57,7 @@ pub async fn retrieve_investments_holdings(configuration: &configuration::Config
     }
 }
 
-pub async fn retrieve_investments_transactions(configuration: &configuration::Configuration, retrieve_investments_transactions_request: crate::models::RetrieveInvestmentsTransactionsRequest) -> Result<(), Error<RetrieveInvestmentsTransactionsError>> {
+pub async fn retrieve_investments_transactions(configuration: &configuration::Configuration, retrieve_investments_transactions_request: crate::models::RetrieveInvestmentsTransactionsRequest) -> Result<crate::models::RetrieveInvestmentsTransactionsRequest, Error<RetrieveInvestmentsTransactionsError>> {
 
     let local_var_client = &configuration.client;
 
@@ -76,7 +76,7 @@ pub async fn retrieve_investments_transactions(configuration: &configuration::Co
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<RetrieveInvestmentsTransactionsError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };

@@ -38,7 +38,7 @@ pub enum RetrieveLiabilitiesReportError {
 
 
 /// With your desired `access_tokens` in hand, all you need to do to create a Liabilities Report is to call the `/liabilities_report/create` endpoint.  When creating a Liabilities Report, the only required fields are your `client_id`, `secret`, an `array of access_tokens` (one for each Item to be included in the Report), and the number of `days_requested` which determines the duration of transaction history to be included.
-pub async fn create_liabilities_report(configuration: &configuration::Configuration, create_liabilities_report_request: crate::models::CreateLiabilitiesReportRequest) -> Result<crate::models::CreateLiabilitiesReportExample, Error<CreateLiabilitiesReportError>> {
+pub async fn create_liabilities_report(configuration: &configuration::Configuration, create_liabilities_report_request: crate::models::CreateLiabilitiesReportRequest) -> Result<crate::models::CreateLiabilitiesReportResponse, Error<CreateLiabilitiesReportError>> {
 
     let local_var_client = &configuration.client;
 
@@ -66,7 +66,7 @@ pub async fn create_liabilities_report(configuration: &configuration::Configurat
 }
 
 /// The `/liabilities_report/remove` endpoint allows you to remove a Liabilities Report. Removing a Liabilities Report invalidates its `liabilities_report_token`, meaning you will no longer be able to use it to access report data. Removing a Liabilities Report does not affect the underlying Items.
-pub async fn remove_liabilities_report(configuration: &configuration::Configuration, remove_liabilities_report_request: crate::models::RemoveLiabilitiesReportRequest) -> Result<crate::models::RemoveLiabilitiesReportExample, Error<RemoveLiabilitiesReportError>> {
+pub async fn remove_liabilities_report(configuration: &configuration::Configuration, remove_liabilities_report_request: crate::models::RemoveLiabilitiesReportRequest) -> Result<crate::models::RemoveLiabilitiesReportResponse, Error<RemoveLiabilitiesReportError>> {
 
     let local_var_client = &configuration.client;
 
@@ -94,7 +94,7 @@ pub async fn remove_liabilities_report(configuration: &configuration::Configurat
 }
 
 /// You can retrieve your Liabilities Report in JSON by calling `/liabilities_report/get`.  <br /> Just like retrieving `transaction` data, you need to wait several seconds to retrieve a liabilities report after you create one.
-pub async fn retrieve_liabilities_report(configuration: &configuration::Configuration, retrieve_liabilities_report_request: crate::models::RetrieveLiabilitiesReportRequest) -> Result<crate::models::RetrieveLiabilitiesReportExample, Error<RetrieveLiabilitiesReportError>> {
+pub async fn retrieve_liabilities_report(configuration: &configuration::Configuration, retrieve_liabilities_report_request: crate::models::RetrieveLiabilitiesReportRequest) -> Result<crate::models::RetrieveLiabilitiesReportResponse, Error<RetrieveLiabilitiesReportError>> {
 
     let local_var_client = &configuration.client;
 

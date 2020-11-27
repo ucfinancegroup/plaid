@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## retrieve_identity
 
-> crate::models::RetrieveIdentityExample retrieve_identity(retrieve_identity_request)
+> crate::models::RetrieveIdentityResponse retrieve_identity(retrieve_identity_request)
 Retrieve Identity
 
 The `/identity/get` endpoint allows you to retrieve various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
@@ -24,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::RetrieveIdentityExample**](RetrieveIdentityExample.md)
+[**crate::models::RetrieveIdentityResponse**](RetrieveIdentityResponse.md)
 
 ### Authorization
 

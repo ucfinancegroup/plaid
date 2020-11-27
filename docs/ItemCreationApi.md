@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## create_item_sandbox_only
 
-> create_item_sandbox_only(create_item_sandbox_only_request)
+> crate::models::CreateItemSandboxOnlyResponse create_item_sandbox_only(create_item_sandbox_only_request)
 Create Item [Sandbox Only]
 
 Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`.
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**crate::models::CreateItemSandboxOnlyResponse**](CreateItemSandboxOnlyResponse.md)
 
 ### Authorization
 
@@ -34,14 +34,14 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## exchange_token
 
-> crate::models::ExchangeTokenExample exchange_token(exchange_token_request)
+> crate::models::ExchangeTokenResponse exchange_token(exchange_token_request)
 Exchange Token
 
 Goes through the exchange token process where the `public_token` is exchanged for an `access_token`.
@@ -55,7 +55,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ExchangeTokenExample**](ExchangeTokenExample.md)
+[**crate::models::ExchangeTokenResponse**](ExchangeTokenResponse.md)
 
 ### Authorization
 

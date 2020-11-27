@@ -66,7 +66,7 @@ pub enum RetrieveanAssetReportPdfError {
 
 
 /// With your desired `access_tokens` in hand, all you need to do to create an Asset Report is to call the `/asset_report/create` endpoint.  When creating an Asset Report, the only required fields are your `client_id`, `secret`, an `array of access_tokens` (one for each Item to be included in the Report), and the number of `days_requested` which determines the duration of transaction history to be included.  `options` is optional!
-pub async fn create_asset_report(configuration: &configuration::Configuration, create_asset_report_request: crate::models::CreateAssetReportRequest) -> Result<crate::models::CreateAssetReportExample, Error<CreateAssetReportError>> {
+pub async fn create_asset_report(configuration: &configuration::Configuration, create_asset_report_request: crate::models::CreateAssetReportRequest) -> Result<crate::models::CreateAssetReportResponse, Error<CreateAssetReportError>> {
 
     let local_var_client = &configuration.client;
 
@@ -94,7 +94,7 @@ pub async fn create_asset_report(configuration: &configuration::Configuration, c
 }
 
 /// Plaid can provide an **Audit Copy** of any Asset Report directly to a participating third party on your behalf.   An Audit Copy contains the same underlying data as the Asset Report. To grant access to an Audit Copy, you’ll create an `audit_copy_token` for it and then pass that token to the third party who needs access. Each third party has its own `auditor_id`, for example `fannie_mae`. You’ll need to create a separate Audit Copy for each third party to whom you want to grant access to the report.
-pub async fn create_audit_copy(configuration: &configuration::Configuration, create_audit_copy_request: crate::models::CreateAuditCopyRequest) -> Result<crate::models::CreateAuditCopyExample, Error<CreateAuditCopyError>> {
+pub async fn create_audit_copy(configuration: &configuration::Configuration, create_audit_copy_request: crate::models::CreateAuditCopyRequest) -> Result<crate::models::CreateAuditCopyResponse, Error<CreateAuditCopyError>> {
 
     let local_var_client = &configuration.client;
 
@@ -122,7 +122,7 @@ pub async fn create_audit_copy(configuration: &configuration::Configuration, cre
 }
 
 /// Create a new Asset Report based on the old one, but with the most recent data available from the financial institution(s).
-pub async fn refresh_asset_report(configuration: &configuration::Configuration, refresh_asset_report_request: crate::models::RefreshAssetReportRequest) -> Result<crate::models::RefreshAssetReportExample, Error<RefreshAssetReportError>> {
+pub async fn refresh_asset_report(configuration: &configuration::Configuration, refresh_asset_report_request: crate::models::RefreshAssetReportRequest) -> Result<crate::models::RefreshAssetReportResponse, Error<RefreshAssetReportError>> {
 
     let local_var_client = &configuration.client;
 
@@ -150,7 +150,7 @@ pub async fn refresh_asset_report(configuration: &configuration::Configuration, 
 }
 
 /// The `/asset_report/remove` endpoint allows you to remove an Asset Report. Removing an Asset Report invalidates its `asset_report_token`, meaning you will no longer be able to use it to access report data or create new Audit Copies. Removing an Asset Report does not affect the underlying Items, but does also invalidate any `audit_copy_token`s associated with the Asset Report. In other words, removing an Asset Report also cascade-removes its Audit Copies.
-pub async fn remove_asset_report(configuration: &configuration::Configuration, remove_asset_report_request: crate::models::RemoveAssetReportRequest) -> Result<crate::models::RemoveAssetReportExample, Error<RemoveAssetReportError>> {
+pub async fn remove_asset_report(configuration: &configuration::Configuration, remove_asset_report_request: crate::models::RemoveAssetReportRequest) -> Result<crate::models::RemoveAssetReportResponse, Error<RemoveAssetReportError>> {
 
     let local_var_client = &configuration.client;
 
@@ -178,7 +178,7 @@ pub async fn remove_asset_report(configuration: &configuration::Configuration, r
 }
 
 /// The `/asset_report/audit_copy/remove` endpoint allows you to remove an Audit Copy. Removing an Audit Copy invalidates the `audit_copy_token` associated with it, meaning both you and any third parties holding the token will no longer be able to use it to access report data. `Item`s associated with the Asset Report, the Asset Report itself and other Audit Copies of it are not affected and will remain accessible after removing the given Audit Copy.
-pub async fn remove_audit_copy(configuration: &configuration::Configuration, remove_audit_copy_request: crate::models::RemoveAuditCopyRequest) -> Result<crate::models::RemoveAuditCopyExample, Error<RemoveAuditCopyError>> {
+pub async fn remove_audit_copy(configuration: &configuration::Configuration, remove_audit_copy_request: crate::models::RemoveAuditCopyRequest) -> Result<crate::models::RemoveAuditCopyResponse, Error<RemoveAuditCopyError>> {
 
     let local_var_client = &configuration.client;
 

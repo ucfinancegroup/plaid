@@ -72,7 +72,7 @@ pub enum UpdateAnItemsWebhookError {
 }
 
 
-pub async fn automated_deposit_webhook(configuration: &configuration::Configuration, automated_deposit_webhook_request: crate::models::AutomatedDepositWebhookRequest) -> Result<(), Error<AutomatedDepositWebhookError>> {
+pub async fn automated_deposit_webhook(configuration: &configuration::Configuration, automated_deposit_webhook_request: crate::models::AutomatedDepositWebhookRequest) -> Result<crate::models::AutomatedDepositWebhookResponse, Error<AutomatedDepositWebhookError>> {
 
     let local_var_client = &configuration.client;
 
@@ -91,7 +91,7 @@ pub async fn automated_deposit_webhook(configuration: &configuration::Configurat
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<AutomatedDepositWebhookError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -99,7 +99,7 @@ pub async fn automated_deposit_webhook(configuration: &configuration::Configurat
     }
 }
 
-pub async fn create_public_tokenfor_update(configuration: &configuration::Configuration, create_public_tokenfor_update_request: crate::models::CreatePublicTokenforUpdateRequest) -> Result<(), Error<CreatePublicTokenforUpdateError>> {
+pub async fn create_public_tokenfor_update(configuration: &configuration::Configuration, create_public_tokenfor_update_request: crate::models::CreatePublicTokenforUpdateRequest) -> Result<crate::models::CreatePublicTokenforUpdateResponse, Error<CreatePublicTokenforUpdateError>> {
 
     let local_var_client = &configuration.client;
 
@@ -118,7 +118,7 @@ pub async fn create_public_tokenfor_update(configuration: &configuration::Config
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<CreatePublicTokenforUpdateError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -127,7 +127,7 @@ pub async fn create_public_tokenfor_update(configuration: &configuration::Config
 }
 
 /// This endpoint allows you to remove an `Item` using its `access_token`.
-pub async fn remove_item(configuration: &configuration::Configuration, remove_item_request: crate::models::RemoveItemRequest) -> Result<crate::models::RemoveItemExample, Error<RemoveItemError>> {
+pub async fn remove_item(configuration: &configuration::Configuration, remove_item_request: crate::models::RemoveItemRequest) -> Result<crate::models::RemoveItemResponse, Error<RemoveItemError>> {
 
     let local_var_client = &configuration.client;
 
@@ -155,7 +155,7 @@ pub async fn remove_item(configuration: &configuration::Configuration, remove_it
 }
 
 /// This endpoint allows you to retrieve all available `Account`s associated with an `Item`.
-pub async fn retrieve_an_items_accounts(configuration: &configuration::Configuration, retrieve_an_items_accounts_request: crate::models::RetrieveAnItemsAccountsRequest) -> Result<crate::models::RetrieveAnItemsAccountsExample, Error<RetrieveAnItemsAccountsError>> {
+pub async fn retrieve_an_items_accounts(configuration: &configuration::Configuration, retrieve_an_items_accounts_request: crate::models::RetrieveAnItemsAccountsRequest) -> Result<crate::models::RetrieveAnItemsAccountsResponse, Error<RetrieveAnItemsAccountsError>> {
 
     let local_var_client = &configuration.client;
 
@@ -183,7 +183,7 @@ pub async fn retrieve_an_items_accounts(configuration: &configuration::Configura
 }
 
 /// This endpoint allows you to retrieve information about an `Item`.
-pub async fn retrieve_item(configuration: &configuration::Configuration, retrieve_item_request: crate::models::RetrieveItemRequest) -> Result<crate::models::RetrieveItemExample, Error<RetrieveItemError>> {
+pub async fn retrieve_item(configuration: &configuration::Configuration, retrieve_item_request: crate::models::RetrieveItemRequest) -> Result<crate::models::RetrieveItemResponse, Error<RetrieveItemError>> {
 
     let local_var_client = &configuration.client;
 
@@ -211,7 +211,7 @@ pub async fn retrieve_item(configuration: &configuration::Configuration, retriev
 }
 
 /// By default, the `access_token` associated with an `Item` does not expire and should be stored in a persistent, secure manner.   <br /> You can use the POST `/item/access_token/invalidate` endpoint to rotate the `access_token` associated with an `Item`. The endpoint returns a new `access_token` and immediately invalidates the previous `access_token`.
-pub async fn rotate_access_token(configuration: &configuration::Configuration, rotate_access_token_request: crate::models::RotateAccessTokenRequest) -> Result<crate::models::RotateAccessTokenExample, Error<RotateAccessTokenError>> {
+pub async fn rotate_access_token(configuration: &configuration::Configuration, rotate_access_token_request: crate::models::RotateAccessTokenRequest) -> Result<crate::models::RotateAccessTokenResponse, Error<RotateAccessTokenError>> {
 
     let local_var_client = &configuration.client;
 
@@ -239,7 +239,7 @@ pub async fn rotate_access_token(configuration: &configuration::Configuration, r
 }
 
 /// An `Item` may transition into an error state in response to changes made by the user or financial institution. The most common scenarios are when a user changes their password or when the financial institution changes their multi-factor authentication flow. [Plaid Link](https://plaid.com/docs/api/#updating-items-via-link) makes it easy to restore a user's `Item` to a good state by having them provide updated credentials and MFA information, if needed.   <br /> In the Sandbox, `Item`s transition to an `ITEM_LOGIN_REQUIRED` error state automatically after 30 days. You can also simulate this event via an API request.   <br /> The `/sandbox/item/reset_login` endpoint allows you put an Item in an `ITEM_LOGIN_REQUIRED` error state. You can then use [Plaid Link update mode](https://plaid.com/docs/api/#updating-items-via-link) to restore the `Item` to a good state.   <br /> An `ITEM_LOGIN_REQUIRED` webhook will be fired after a call to this endpoint, if one is associated with the `Item`.
-pub async fn simulate_itemloginrequired_sandbox_only(configuration: &configuration::Configuration, simulate_item_login_required_sandbox_only_request: crate::models::SimulateItemLoginRequiredSandboxOnlyRequest) -> Result<crate::models::SimulateItemLoginRequiredSandboxOnlyExample, Error<SimulateItemloginrequiredSandboxOnlyError>> {
+pub async fn simulate_itemloginrequired_sandbox_only(configuration: &configuration::Configuration, simulate_item_login_required_sandbox_only_request: crate::models::SimulateItemLoginRequiredSandboxOnlyRequest) -> Result<crate::models::SimulateItemLoginRequiredSandboxOnlyResponse, Error<SimulateItemloginrequiredSandboxOnlyError>> {
 
     let local_var_client = &configuration.client;
 
@@ -267,7 +267,7 @@ pub async fn simulate_itemloginrequired_sandbox_only(configuration: &configurati
 }
 
 /// This endpoint allows you to update the webhook url for an `Item`. This request triggers a `WEBHOOK_UPDATE_ACKNOWLEDGED` [webhook](https://plaid.com/docs/api/#item-webhooks).
-pub async fn update_an_items_webhook(configuration: &configuration::Configuration, update_an_items_webhook_request: crate::models::UpdateAnItemsWebhookRequest) -> Result<crate::models::UpdateAnItemsWebhookExample, Error<UpdateAnItemsWebhookError>> {
+pub async fn update_an_items_webhook(configuration: &configuration::Configuration, update_an_items_webhook_request: crate::models::UpdateAnItemsWebhookRequest) -> Result<crate::models::UpdateAnItemsWebhookResponse, Error<UpdateAnItemsWebhookError>> {
 
     let local_var_client = &configuration.client;
 

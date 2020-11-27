@@ -31,7 +31,7 @@ pub enum ExchangeTokenError {
 
 
 /// Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`.
-pub async fn create_item_sandbox_only(configuration: &configuration::Configuration, create_item_sandbox_only_request: crate::models::CreateItemSandboxOnlyRequest) -> Result<(), Error<CreateItemSandboxOnlyError>> {
+pub async fn create_item_sandbox_only(configuration: &configuration::Configuration, create_item_sandbox_only_request: crate::models::CreateItemSandboxOnlyRequest) -> Result<crate::models::CreateItemSandboxOnlyResponse, Error<CreateItemSandboxOnlyError>> {
 
     let local_var_client = &configuration.client;
 
@@ -50,7 +50,7 @@ pub async fn create_item_sandbox_only(configuration: &configuration::Configurati
     let local_var_content = local_var_resp.text().await?;
 
     if local_var_status.is_success() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<CreateItemSandboxOnlyError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
@@ -59,7 +59,7 @@ pub async fn create_item_sandbox_only(configuration: &configuration::Configurati
 }
 
 /// Goes through the exchange token process where the `public_token` is exchanged for an `access_token`.
-pub async fn exchange_token(configuration: &configuration::Configuration, exchange_token_request: crate::models::ExchangeTokenRequest) -> Result<crate::models::ExchangeTokenExample, Error<ExchangeTokenError>> {
+pub async fn exchange_token(configuration: &configuration::Configuration, exchange_token_request: crate::models::ExchangeTokenRequest) -> Result<crate::models::ExchangeTokenResponse, Error<ExchangeTokenError>> {
 
     let local_var_client = &configuration.client;
 

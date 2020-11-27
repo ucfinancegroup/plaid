@@ -24,7 +24,7 @@ pub enum RetrieveIncomeError {
 
 
 /// The `/income/get` endpoint allows you to retrieve information pertaining to a `Item`’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job). Details on each of these fields can be found below.   <br /> Just like retrieving `transaction` data, you need to wait several seconds to retrieve `income` data after `Item` creation. A good practice is to retrieve the data when you are notified that it's ready via webhook.
-pub async fn retrieve_income(configuration: &configuration::Configuration, retrieve_income_request: crate::models::RetrieveIncomeRequest) -> Result<crate::models::RetrieveIncomeExample, Error<RetrieveIncomeError>> {
+pub async fn retrieve_income(configuration: &configuration::Configuration, retrieve_income_request: crate::models::RetrieveIncomeRequest) -> Result<crate::models::RetrieveIncomeResponse, Error<RetrieveIncomeError>> {
 
     let local_var_client = &configuration.client;
 

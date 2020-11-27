@@ -39,6 +39,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateLinkTokenResponse"
       deprecated: false
   /sandbox/public_token/create:
     post:
@@ -67,6 +71,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateItemSandboxOnlyResponse"
       deprecated: false
   /item/public_token/exchange:
     post:
@@ -160,7 +168,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ExchangeTokenExample"
+                $ref: "#/components/schemas/ExchangeTokenResponse"
               example:
                 access_token: access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7
                 item_id: wnVRXPmk3mt3wepjXEeXsbN4NWe5V9FrNeEN1
@@ -258,7 +266,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveItemExample"
+                $ref: "#/components/schemas/RetrieveItemResponse"
               example:
                 item:
                   available_products:
@@ -368,7 +376,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveAnItemsAccountsExample"
+                $ref: "#/components/schemas/RetrieveAnItemsAccountsResponse"
               example:
                 accounts:
                   - account_id: PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk
@@ -538,7 +546,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RotateAccessTokenExample"
+                $ref: "#/components/schemas/RotateAccessTokenResponse"
               example:
                 new_access_token: access-sandbox-15b1169a-3dac-4d8c-a24c-d71e90b91e07
                 request_id: L7wrN
@@ -636,7 +644,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/UpdateAnItemsWebhookExample"
+                $ref: "#/components/schemas/UpdateAnItemsWebhookResponse"
               example:
                 item:
                   available_products:
@@ -746,7 +754,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SimulateITEM_LOGIN_REQUIREDSandboxOnlyExample"
+                $ref: "#/components/schemas/SimulateITEM_LOGIN_REQUIREDSandboxOnlyResponse"
               example:
                 request_id: vv5qz
                 reset_login: true
@@ -843,7 +851,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RemoveItemExample"
+                $ref: "#/components/schemas/RemoveItemResponse"
               example:
                 removed: true
                 request_id: rIjWv
@@ -872,6 +880,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AutomatedDepositWebhookResponse"
       deprecated: false
   /item/public_token/create:
     post:
@@ -895,7 +907,11 @@ paths:
         200:
           description: ""
           headers: {}
-      deprecated: false
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreatePublicTokenforUpdateResponse"
+      deprecated: true
   /auth/get:
     post:
       tags:
@@ -988,7 +1004,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveAuthEFTExample"
+                $ref: "#/components/schemas/RetrieveAuthEFTResponse"
               example:
                 accounts:
                   - account_id: PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk
@@ -1171,7 +1187,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveTransactionsExample"
+                $ref: "#/components/schemas/RetrieveTransactionsResponse"
               example:
                 accounts:
                   - account_id: wp5rJy31NMfyEJNDvoqXhbwLlRaEGyCrwWWdy
@@ -4359,7 +4375,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveBalanceExample"
+                $ref: "#/components/schemas/RetrieveBalanceResponse"
               example:
                 accounts:
                   - account_id: wp5rJy31NMfyEJNDvoqXhbwLlRaEGyCrwWWdy
@@ -4530,7 +4546,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveIdentityExample"
+                $ref: "#/components/schemas/RetrieveIdentityResponse"
               example:
                 accounts:
                   - account_id: wp5rJy31NMfyEJNDvoqXhbwLlRaEGyCrwWWdy
@@ -4743,7 +4759,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveIncomeExample"
+                $ref: "#/components/schemas/RetrieveIncomeResponse"
               example:
                 income:
                   income_streams:
@@ -4871,7 +4887,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CreateAssetReportExample"
+                $ref: "#/components/schemas/CreateAssetReportResponse"
               example:
                 asset_report_id: 67de6f27-dc59-4663-a5ec-f2e3c271d208
                 asset_report_token: assets-sandbox-d4002c0d-458a-41d0-9208-ac23700940f1
@@ -5088,7 +5104,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CreateAuditCopyExample"
+                $ref: "#/components/schemas/CreateAuditCopyResponse"
               example:
                 audit_copy_token: a-sandbox-zk3j2qctsbdojdaq7bylhxu7sa
                 request_id: Ngbxk
@@ -5185,7 +5201,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RemoveAssetReportExample"
+                $ref: "#/components/schemas/RemoveAssetReportResponse"
               example:
                 removed: true
                 request_id: L1oxW
@@ -5282,7 +5298,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RemoveAuditCopyExample"
+                $ref: "#/components/schemas/RemoveAuditCopyResponse"
               example:
                 removed: true
                 request_id: Rvr6D
@@ -5391,7 +5407,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RefreshAssetReportExample"
+                $ref: "#/components/schemas/RefreshAssetReportResponse"
               example:
                 asset_report_id: d688fccd-ea25-441c-8432-da7ad149d272
                 asset_report_token: assets-sandbox-0334b31a-177f-4f4e-9764-ed20d217ef9b
@@ -5489,7 +5505,7 @@ paths:
           content:
             application/json; charset=utf-8:
               schema:
-                $ref: "#/components/schemas/CreateLiabilitiesReportExample"
+                $ref: "#/components/schemas/CreateLiabilitiesReportResponse"
               example:
                 liabilities_report_id: 3c76bd62-b3e1-483d-9387-f7c26f24bc53
                 liabilities_report_token: liabilities-report-sandbox-b6019c5e-057b-429c-8ab6-0a461a5f1fc2
@@ -5587,7 +5603,7 @@ paths:
           content:
             application/json; charset=utf-8:
               schema:
-                $ref: "#/components/schemas/RetrieveLiabilitiesReportExample"
+                $ref: "#/components/schemas/RetrieveLiabilitiesReportResponse"
       deprecated: false
   /liabilities_report/remove:
     post:
@@ -5675,7 +5691,7 @@ paths:
           content:
             application/json; charset=utf-8:
               schema:
-                $ref: "#/components/schemas/RemoveLiabilitiesReportExample"
+                $ref: "#/components/schemas/RemoveLiabilitiesReportResponse"
               example:
                 removed: true
                 request_id: pbmNyTduuDRVKxY
@@ -5702,6 +5718,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RetrieveLiabilitiesResponse"
       deprecated: false
   /investments/holdings/get:
     post:
@@ -5725,6 +5745,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RetrieveInvestmentsHoldingsResponse"
       deprecated: false
   /investments/transactions/get:
     post:
@@ -5750,6 +5774,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RetrieveInvestmentsTransactionsRequest"
       deprecated: false
   /institutions/search:
     post:
@@ -5841,7 +5869,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SearchInstitutionbyNameExample"
+                $ref: "#/components/schemas/SearchInstitutionbyNameResponse"
               example:
                 institutions:
                   - credentials:
@@ -6148,7 +6176,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SearchInstitutionbyIDExample"
+                $ref: "#/components/schemas/SearchInstitutionbyIDResponse"
               example:
                 institution:
                   credentials:
@@ -6270,7 +6298,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveInsitutionListExample"
+                $ref: "#/components/schemas/RetrieveInsitutionListResponse"
               example:
                 institutions:
                   - credentials:
@@ -10254,7 +10282,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RetrieveCategoriesExample"
+                $ref: "#/components/schemas/RetrieveCategoriesResponse"
               example:
                 categories:
                   - category_id: 10000000
@@ -13621,6 +13649,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FireWebhookSandboxOnlyResponse"
       deprecated: false
   /webhook_verification_key/get:
     post:
@@ -13645,6 +13677,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetWebhookVerificationKeyResponse"
       deprecated: false
   /payment_initiation/recipient/create:
     post:
@@ -13681,6 +13717,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreatePaymentRecipientResponse"
       deprecated: false
   /payment_initiation/payment/create:
     post:
@@ -13709,6 +13749,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreatePaymentResponse"
       deprecated: false
   /payment_initiation/payment/token/create:
     post:
@@ -13737,7 +13781,11 @@ paths:
         200:
           description: ""
           headers: {}
-      deprecated: false
+          # content:
+          #   application/json:
+          #     schema:
+          #       $ref: "#/components/schemas/CreatePaymentTokenResponse"
+      deprecated: true
   /payment_initiation/payment/get:
     post:
       tags:
@@ -13761,6 +13809,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetPaymentResponse"
       deprecated: false
   /payment_initiation/payment/list:
     post:
@@ -13789,6 +13841,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListPaymentsResponse"
       deprecated: false
   /payment_initiation/recipient/get:
     post:
@@ -13813,6 +13869,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetPaymentRecipientResponse"
       deprecated: false
   /payment_initiation/recipient/list:
     post:
@@ -13836,6 +13896,10 @@ paths:
         200:
           description: ""
           headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListPaymentRecipientsResponse"
       deprecated: false
 components:
   schemas:
@@ -14146,8 +14210,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         public_token: ENTER_PUBLIC_TOKEN_HERE
-    ExchangeTokenExample:
-      title: ExchangeTokenExample
+    ExchangeTokenResponse:
+      title: ExchangeTokenResponse
       required:
         - access_token
         - item_id
@@ -14182,8 +14246,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RetrieveItemExample:
-      title: RetrieveItemExample
+    RetrieveItemResponse:
+      title: RetrieveItemResponse
       required:
         - item
         - request_id
@@ -14271,8 +14335,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RetrieveAnItemsAccountsExample:
-      title: RetrieveAnItemsAccountsExample
+    RetrieveAnItemsAccountsResponse:
+      title: RetrieveAnItemsAccountsResponse
       required:
         - accounts
         - item
@@ -14452,8 +14516,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RotateAccessTokenExample:
-      title: RotateAccessTokenExample
+    RotateAccessTokenResponse:
+      title: RotateAccessTokenResponse
       required:
         - new_access_token
         - request_id
@@ -14488,8 +14552,8 @@ components:
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
         webhook: ENTER_WEBHOOK_URL_HERE
-    UpdateAnItemsWebhookExample:
-      title: UpdateAnItemsWebhookExample
+    UpdateAnItemsWebhookResponse:
+      title: UpdateAnItemsWebhookResponse
       required:
         - item
         - request_id
@@ -14533,8 +14597,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    SimulateITEM_LOGIN_REQUIREDSandboxOnlyExample:
-      title: SimulateITEM_LOGIN_REQUIREDSandboxOnlyExample
+    SimulateITEM_LOGIN_REQUIREDSandboxOnlyResponse:
+      title: SimulateITEM_LOGIN_REQUIREDSandboxOnlyResponse
       required:
         - request_id
         - reset_login
@@ -14565,8 +14629,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RemoveItemExample:
-      title: RemoveItemExample
+    RemoveItemResponse:
+      title: RemoveItemResponse
       required:
         - removed
         - request_id
@@ -14641,8 +14705,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RetrieveAuthEFTExample:
-      title: RetrieveAuthEFTExample
+    RetrieveAuthEFTResponse:
+      title: RetrieveAuthEFTResponse
       required:
         - accounts
         - item
@@ -14824,8 +14888,8 @@ components:
         access_token: ENTER_ACCESS_TOKEN_HERE
         start_date: 2017-01-01
         end_date: 2019-05-10
-    RetrieveTransactionsExample:
-      title: RetrieveTransactionsExample
+    RetrieveTransactionsResponse:
+      title: RetrieveTransactionsResponse
       required:
         - accounts
         - item
@@ -18139,8 +18203,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RetrieveBalanceExample:
-      title: RetrieveBalanceExample
+    RetrieveBalanceResponse:
+      title: RetrieveBalanceResponse
       required:
         - accounts
         - item
@@ -18251,8 +18315,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RetrieveIdentityExample:
-      title: RetrieveIdentityExample
+    RetrieveIdentityResponse:
+      title: RetrieveIdentityResponse
       required:
         - accounts
         - identity
@@ -18565,8 +18629,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         access_token: ENTER_ACCESS_TOKEN_HERE
-    RetrieveIncomeExample:
-      title: RetrieveIncomeExample
+    RetrieveIncomeResponse:
+      title: RetrieveIncomeResponse
       required:
         - income
         - request_id
@@ -18761,8 +18825,8 @@ components:
         ssn: ENTER_SSN_HERE
         phone_number: ENTER_PHONE_NUMBER_HERE
         email: ENTER_EMAIL_HERE
-    CreateAssetReportExample:
-      title: CreateAssetReportExample
+    CreateAssetReportResponse:
+      title: CreateAssetReportResponse
       required:
         - asset_report_id
         - asset_report_token
@@ -19465,8 +19529,8 @@ components:
         secret: "{{secret_key}}"
         asset_report_token: ENTER_ASSET_REPORT_TOKEN_HERE
         auditor_id: ENTER_AUDITOR_ID_HERE
-    CreateAuditCopyExample:
-      title: CreateAuditCopyExample
+    CreateAuditCopyResponse:
+      title: CreateAuditCopyResponse
       required:
         - audit_copy_token
         - request_id
@@ -19497,8 +19561,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         asset_report_token: ENTER_ASSET_REPORT_TOKEN_HERE
-    RemoveAssetReportExample:
-      title: RemoveAssetReportExample
+    RemoveAssetReportResponse:
+      title: RemoveAssetReportResponse
       required:
         - removed
         - request_id
@@ -19529,8 +19593,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         audit_copy_token: ENTER_AUDIT_COPY_TOKEN_HERE
-    RemoveAuditCopyExample:
-      title: RemoveAuditCopyExample
+    RemoveAuditCopyResponse:
+      title: RemoveAuditCopyResponse
       required:
         - removed
         - request_id
@@ -19580,8 +19644,8 @@ components:
             ssn: ENTER_SSN_HERE
             phone_number: ENTER_PHONE_NUMBER_HERE
             email: ENTER_EMAIL_HERE
-    RefreshAssetReportExample:
-      title: RefreshAssetReportExample
+    RefreshAssetReportResponse:
+      title: RefreshAssetReportResponse
       required:
         - asset_report_id
         - asset_report_token
@@ -19625,8 +19689,8 @@ components:
         access_tokens:
           - ENTER_ACCESS_TOKENS_HERE
         days_requested: 30
-    CreateLiabilitiesReportExample:
-      title: CreateLiabilitiesReportExample
+    CreateLiabilitiesReportResponse:
+      title: CreateLiabilitiesReportResponse
       required:
         - liabilities_report_id
         - liabilities_report_token
@@ -19661,8 +19725,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         liabilities_report_token: ENTER_LIABILITIES_REPORT_TOKEN_HERE
-    RetrieveLiabilitiesReportExample:
-      title: RetrieveLiabilitiesReportExample
+    RetrieveLiabilitiesReportResponse:
+      title: RetrieveLiabilitiesReportResponse
       required:
         - report
         - request_id
@@ -20552,8 +20616,8 @@ components:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
         liabilities_report_token: ENTER_LIABILITIES_REPORT_TOKEN_HERE
-    RemoveLiabilitiesReportExample:
-      title: RemoveLiabilitiesReportExample
+    RemoveLiabilitiesReportResponse:
+      title: RemoveLiabilitiesReportResponse
       required:
         - removed
         - request_id
@@ -20662,8 +20726,8 @@ components:
           - US
         products:
           - auth
-    SearchInstitutionbyNameExample:
-      title: SearchInstitutionbyNameExample
+    SearchInstitutionbyNameResponse:
+      title: SearchInstitutionbyNameResponse
       required:
         - institutions
         - request_id
@@ -20996,8 +21060,8 @@ components:
           - US
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
-    SearchInstitutionbyIDExample:
-      title: SearchInstitutionbyIDExample
+    SearchInstitutionbyIDResponse:
+      title: SearchInstitutionbyIDResponse
       required:
         - institution
         - request_id
@@ -21064,8 +21128,8 @@ components:
         offset: 0
         country_codes:
           - US
-    RetrieveInsitutionListExample:
-      title: RetrieveInsitutionListExample
+    RetrieveInsitutionListResponse:
+      title: RetrieveInsitutionListResponse
       required:
         - institutions
         - request_id
@@ -24980,8 +25044,8 @@ components:
               - income
         request_id: dWAMr
         total: 9638
-    RetrieveCategoriesExample:
-      title: RetrieveCategoriesExample
+    RetrieveCategoriesResponse:
+      title: RetrieveCategoriesResponse
       required:
         - categories
         - request_id
@@ -28585,6 +28649,323 @@ components:
       example:
         client_id: "{{client_id}}"
         secret: "{{secret_key}}"
+    CreateLinkTokenResponse:
+      title: CreateLinkTokenResponse
+      required:
+        - link_token
+        - expiration
+      type: object
+      properties:
+        link_token:
+          type: string
+        expiration:
+          type: string
+      example:
+        link_token: "link-production-840204-193734"
+        expiration: "2020-03-27T12:56:34.000Z"
+    CreateItemSandboxOnlyResponse:
+      title: CreateItemSandboxOnlyResponse
+      required:
+        - public_token
+        - request_id
+      type: object
+      properties:
+        public_token:
+          type: string
+        request_id:
+          type: string
+      # example:
+    AutomatedDepositWebhookResponse:
+      title: AutomatedDepositWebhookResponse
+      required:
+        - request_id
+      type: object
+      properties:
+        request_id:
+          type: string
+      # example:
+    CreatePublicTokenforUpdateResponse:
+      title: CreatePublicTokenforUpdateResponse
+      required:
+        - public_token
+      type: object
+      properties:
+        public_token:
+          type: string
+      # example:
+    RetrieveLiabilitiesResponse:
+      title: RetrieveLiabilitiesResponse
+      required:
+        - accounts
+        - item
+        - liabilities
+        - request_id
+      type: object
+      properties:
+        accounts:
+          $ref: "#/components/schemas/RetrieveAnItemsAccountsResponse"
+        item:
+          $ref: "#/components/schemas/RetrieveItemResponse"
+        liabilities:
+          type: object
+          # TODO
+        request_id:
+          type: string
+      # example:
+    RetrieveInvestmentsHoldingsResponse:
+      title: RetrieveInvestmentsHoldingsResponse
+      required:
+        - accounts
+        - holdings
+        - securities
+        - item
+        - request_id
+      type: object
+      properties:
+        accounts:
+          $ref: "#/components/schemas/RetrieveAnItemsAccountsResponse"
+        holdings:
+          type: object
+          # TODO
+        securities:
+          type: object
+          # TODO
+        item:
+          $ref: "#/components/schemas/RetrieveItemResponse"
+        request_id:
+          type: string
+      # example:
+    FireWebhookSandboxOnlyResponse:
+      title: FireWebhookSandboxOnlyResponse
+      required:
+        - webhook_fired
+        - request_id
+      type: object
+      properties:
+        webhook_fired:
+          type: boolean
+        request_id:
+          type: string
+      # example:
+    GetWebhookVerificationKeyResponse:
+      title: GetWebhookVerificationKeyResponse
+      required:
+        - key
+        - request_id
+      type: object
+      properties:
+        key:
+          type: object
+          required:
+            - alg
+            - crv
+            - kid
+            - kty
+            - use
+            - x
+            - "y"
+          properties:
+            alg:
+              type: string
+            created_at:
+              type: number
+            expired_at:
+              type: number
+            crv:
+              type: string
+            kid:
+              type: string
+            kty:
+              type: string
+            use:
+              type: string
+            x:
+              type: string
+            y:
+              type: string
+        request_id:
+          type: string
+    CreatePaymentRecipientResponse:
+      title: CreatePaymentRecipientResponse
+      required:
+        - recipient_id
+        - request_id
+      type: object
+      properties:
+        recipient_id:
+          type: string
+        request_id:
+          type: string
+    PaymentRecipient:
+      title: PaymentRecipient
+      required:
+        - recipient_id
+        - name
+        - address
+        - iban
+      type: object
+      properties:
+        recipient_id:
+          type: string
+        name:
+          type: string
+        address:
+          $ref: "#/components/schemas/Address3"
+        iban:
+          type: string
+        bacs:
+          type: object
+    GetPaymentRecipientResponse:
+      title: GetPaymentRecipientResponse
+      required:
+        - recipient_id
+        - name
+        - address
+        - iban
+        - request_id
+      type: object
+      properties:
+        recipient_id:
+          type: string
+        name:
+          type: string
+        address:
+          $ref: "#/components/schemas/Address3"
+        iban:
+          type: string
+        bacs:
+          type: object
+        request_id:
+          type: string
+    ListPaymentRecipientsResponse:
+      title: ListPaymentRecipientsResponse
+      required:
+        - recipients
+        - request_id
+      type: object
+      properties:
+        recipients:
+          type: array
+          items:
+            $ref: "#/components/schemas/PaymentRecipient"
+        request_id:
+          type: string
+    PaymentStatus:
+      title: PaymentStatus
+      type: string
+      enum:
+        - PAYMENT_STATUS_INPUT_NEEDED
+        - PAYMENT_STATUS_PROCESSING
+        - PAYMENT_STATUS_INITIATED
+        - PAYMENT_STATUS_COMPLETED
+        - PAYMENT_STATUS_INSUFFICIENT_FUNDS
+        - PAYMENT_STATUS_FAILED
+        - PAYMENT_STATUS_BLOCKED
+        - PAYMENT_STATUS_UNKNOWN
+    CreatePaymentResponse:
+      title: CreatePaymentResponse
+      required:
+        - payment_id
+        - status
+        - request_id
+      type: object
+      properties:
+        payment_id:
+          type: string
+        status:
+          $ref: "#/components/schemas/PaymentStatus"
+        request_id:
+          type: string
+    # CreatePaymentTokenResponse:
+    #   title: CreatePaymentTokenResponse
+    #   required:
+    #   type: object
+    #   properties:
+    Payment:
+      title: Payment
+      required:
+        - payment_id
+        - amount
+        - status
+        - recipient_id
+        - reference
+        - last_status_update
+      type: object
+      properties:
+        payment_id:
+          type: string
+        amount:
+          type: object
+          required:
+            - currency
+            - value
+          properties:
+            currency:
+              type: string
+            value:
+              type: number
+        status:
+          $ref: "#/components/schemas/PaymentStatus"
+        recipient_id:
+          type: string
+        reference:
+          type: string
+        last_status_update:
+          type: string
+        schedule:
+          type: object
+    GetPaymentResponse:
+      title: GetPaymentResponse
+      required:
+        - payment_id
+        - request_id
+        - amount
+        - status
+        - recipient_id
+        - reference
+        - last_status_update
+      type: object
+      properties:
+        payment_id:
+          type: string
+        request_id:
+          type: string
+        amount:
+          type: object
+          required:
+            - currency
+            - value
+          properties:
+            currency:
+              type: string
+            value:
+              type: number
+        status:
+          $ref: "#/components/schemas/PaymentStatus"
+        recipient_id:
+          type: string
+        reference:
+          type: string
+        last_status_update:
+          type: string
+        schedule:
+          type: object
+    ListPaymentsResponse:
+      title: ListPaymentsResponse
+      required:
+        - payments
+        - next_cursor
+        - request_id
+      type: object
+      properties:
+        payments:
+          type: array
+          items:
+            $ref: "#/components/schemas/Payment"
+        next_cursor:
+          type: string
+        request_id:
+          type: string
 tags:
   - name: Link Tokens
   - name: Item Creation
