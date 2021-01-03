@@ -20,13 +20,13 @@ pub struct Balances6 {
     #[serde(rename = "iso_currency_code")]
     pub iso_currency_code: String,
     #[serde(rename = "limit")]
-    pub limit: Option<String>,
+    pub limit: Option<f32>,
     #[serde(rename = "unofficial_currency_code")]
     pub unofficial_currency_code: Option<String>,
 }
 
 impl Balances6 {
-    pub fn new(available: f32, current: f32, iso_currency_code: String, limit: Option<String>, unofficial_currency_code: Option<String>) -> Balances6 {
+    pub fn new(available: f32, current: f32, iso_currency_code: String, limit: Option<f32>, unofficial_currency_code: Option<String>) -> Balances6 {
         Balances6 {
             available,
             current,
