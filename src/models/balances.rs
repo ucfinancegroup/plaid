@@ -14,9 +14,9 @@
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Balances {
     #[serde(rename = "available")]
-    pub available: Option<i32>,
+    pub available: Option<f32>,
     #[serde(rename = "current")]
-    pub current: i32,
+    pub current: f32,
     #[serde(rename = "iso_currency_code")]
     pub iso_currency_code: String,
     #[serde(rename = "limit")]
@@ -26,7 +26,7 @@ pub struct Balances {
 }
 
 impl Balances {
-    pub fn new(available: Option<i32>, current: i32, iso_currency_code: String, limit: Option<String>, unofficial_currency_code: Option<String>) -> Balances {
+    pub fn new(available: Option<f32>, current: f32, iso_currency_code: String, limit: Option<String>, unofficial_currency_code: Option<String>) -> Balances {
         Balances {
             available,
             current,

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**available** | Option<**i32**> |  | 
-**current** | **i32** |  | 
+**available** | Option<**f32**> |  | 
+**current** | **f32** |  | 
 **iso_currency_code** | **String** |  | 
 **limit** | Option<**String**> |  | 
 **unofficial_currency_code** | Option<**String**> |  | 

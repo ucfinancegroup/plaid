@@ -14478,12 +14478,10 @@ components:
       type: object
       properties:
         available:
-          type: integer
-          format: int32
+          type: number
           nullable: true
         current:
-          type: integer
-          format: int32
+          type: number
         iso_currency_code:
           type: string
         limit:
@@ -19243,11 +19241,9 @@ components:
       type: object
       properties:
         available:
-          type: integer
-          format: int32
+          type: number
         current:
-          type: integer
-          format: int32
+          type: number
         iso_currency_code:
           type: string
         unofficial_currency_code:
@@ -19931,8 +19927,7 @@ components:
       type: object
       properties:
         available:
-          type: integer
-          format: int32
+          type: number
         current:
           type: number
         iso_currency_code:
