@@ -14450,6 +14450,7 @@ components:
           type: string
         official_name:
           type: string
+          nullable: true
         subtype:
           type: string
         type:

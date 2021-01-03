@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **balances** | [**crate::models::Balances**](Balances.md) |  | 
 **mask** | **String** |  | 
 **name** | **String** |  | 
-**official_name** | **String** |  | 
+**official_name** | Option<**String**> |  | 
 **subtype** | **String** |  | 
 **_type** | **String** |  | 
 

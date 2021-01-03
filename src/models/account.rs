@@ -22,7 +22,7 @@ pub struct Account {
     #[serde(rename = "name")]
     pub name: String,
     #[serde(rename = "official_name")]
-    pub official_name: String,
+    pub official_name: Option<String>,
     #[serde(rename = "subtype")]
     pub subtype: String,
     #[serde(rename = "type")]
@@ -30,7 +30,7 @@ pub struct Account {
 }
 
 impl Account {
-    pub fn new(account_id: String, balances: crate::models::Balances, mask: String, name: String, official_name: String, subtype: String, _type: String) -> Account {
+    pub fn new(account_id: String, balances: crate::models::Balances, mask: String, name: String, official_name: Option<String>, subtype: String, _type: String) -> Account {
         Account {
             account_id,
             balances,
