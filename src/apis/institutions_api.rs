@@ -23,7 +23,7 @@ pub enum RetrieveInsitutionListError {
 }
 
 /// struct for typed errors of method `search_institutionby_id`
-#[derive(Debug, Clone, Serialize, Deserialize, Display)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum SearchInstitutionbyIdError {
     UnknownValue(serde_json::Value),
